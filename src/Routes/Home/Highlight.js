@@ -25,15 +25,32 @@ const LikeDisplay = styled.span`
     color: #666;
 `
 
-export default ( props ) => {
-    return (<Container>
-        <TimestampButton href="#">
-            <Timestamp>
-                {props.timestamp}
-            </Timestamp>
-        </TimestampButton>
-        <LikeDisplay>
-            {`👍${props.likes}`}
-        </LikeDisplay>
-    </Container>)
+class Highlight extends React.Component {
+
+    constructor( props )
+    {
+        super( props )
+        this.state = {
+            timestamp: props.timestamp,
+            likes: props.likes,
+        }
+    }
+
+    render () {
+        const { timestamp, likes } = this.state
+        return (
+            <Container>
+                <TimestampButton href="#">
+                    <Timestamp>
+                        {timestamp}
+                    </Timestamp>
+                </TimestampButton>
+                <LikeDisplay>
+                    {`👍${likes}`}
+                </LikeDisplay>
+            </Container>
+        )
+    }
 }
+
+export default Highlight
