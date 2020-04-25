@@ -33,14 +33,28 @@ class Highlight extends React.Component {
         this.state = {
             timestamp: props.timestamp,
             likes: props.likes,
+            youtubeSeekTo: props.youtubeSeekTo,
         }
     }
 
+    timestampToSecond ( timestamp )
+    {
+        let second = 0
+        let multiply = 1
+        let arr = timestamp.split(":")
+        for( let i = arr.length - 1; i >= 0; -- i )
+        {
+            second += multiply * Number(arr[i])
+            multiply *= 60
+        }
+        return second
+    }
+
     render () {
-        const { timestamp, likes } = this.state
+        const { timestamp, likes, youtubeSeekTo } = this.state
         return (
             <Container>
-                <TimestampButton href="#">
+                <TimestampButton href="#" onClick={(e)=>youtubeSeekTo(this.timestampToSecond(timestamp), true)}>
                     <Timestamp>
                         {timestamp}
                     </Timestamp>
