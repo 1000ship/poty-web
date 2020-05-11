@@ -5,18 +5,25 @@ import YouTube from 'react-youtube';
 import Highlight from './Highlight'
 
 
-const HomePresenter = ( { youtubeVideoId, highlights, youtubeSeekTo, youtubeReady, youtubeOpts } ) => (
+const HomePresenter = ( { videoId, highlights, youtubeSeekTo, youtubeReady, youtubeOpts, loading } ) => (
     <Container className="pt-2">
         <Row>
             <Col xs="12" md="8" lg="9" className="embed-responsive embed-responsive-16by9">
-                <YouTube videoId={youtubeVideoId} opts={youtubeOpts} onReady={youtubeReady}/>
+                {loading ? <>asd</> : (
+                    <YouTube videoId={videoId} opts={youtubeOpts} onReady={youtubeReady}/>
+                )}
             </Col>
             <Col xd="12" md="4" lg="3">
                 { highlights && 
                     highlights.map( highlight =>
                         <Highlight 
+                            videoId={highlight.videoId}
+                            lastUpdate={highlight.lastUpdate}
+                            rank={highlight.rank}
+                            totalLikeCount={highlight.totalLikeCount}
+                            totalReplyComment={highlight.totalReplyComment}
                             timestamp={highlight.timestamp}
-                            likes={highlight.likes}
+                            comments={highlight.comments}
                             youtubeSeekTo={youtubeSeekTo}
                         />
                     )

@@ -31,8 +31,13 @@ class Highlight extends React.Component {
     {
         super( props )
         this.state = {
+            videoId: props.videoId,
+            lastUpdate: props.lastUpdate,
+            rank: props.rank,
+            totalLikeCount: props.totalLikeCount,
+            totalReplyComment: props.totalReplyComment,
             timestamp: props.timestamp,
-            likes: props.likes,
+            comments: props.comments,
             youtubeSeekTo: props.youtubeSeekTo,
         }
     }
@@ -51,7 +56,7 @@ class Highlight extends React.Component {
     }
 
     render () {
-        const { timestamp, likes, youtubeSeekTo } = this.state
+        const { videoId, lastUpdate, rank, totalLikeCount, totalReplyComment, timestamp, comments, youtubeSeekTo } = this.state
         return (
             <Container>
                 <TimestampButton href="#" onClick={(e)=>youtubeSeekTo(this.timestampToSecond(timestamp), true)}>
@@ -60,7 +65,7 @@ class Highlight extends React.Component {
                     </Timestamp>
                 </TimestampButton>
                 <LikeDisplay>
-                    {`👍${likes}`}
+                    {`👍${totalLikeCount}`}
                 </LikeDisplay>
             </Container>
         )

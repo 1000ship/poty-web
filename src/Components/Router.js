@@ -7,5 +7,6 @@ export default () => (
     <Router>
         <Header />
         <Route path="/" exact component={Home} />
+        <Route path="/video/" component={Home} />
     </Router>
 )

@@ -1,27 +1,52 @@
 import React from 'react'
 import HomePresenter from './HomePresenter'
+import {highlightApi} from 'api'
 
 export default class extends React.Component {
-    
+
+    state = {
+        videoId: "",
+        highlights: [],
+        youtubePlayer: null,
+        youtubeOpts: {
+            width: "100%",
+            height: "100%",
+            playerVars: {
+                // https://developers.google.com/youtube/player_parameters
+                autoplay: 1,
+                enablejsapi: 1,
+                modestbranding: 1,
+            //   rel: 0,
+            //   showinfo: 0,
+            //   playlist: [],
+            },
+        },
+        loading: true,
+    }
+
     constructor ( props ) {
         super(props)
-        this.state = {
-            youtubeVideoId: "aDZ4zG36oRQ",
-            highlights: [{timestamp: "4:13:12", likes: 20}],
-            youtubePlayer: null,
-            youtubeOpts: {
-                width: "100%",
-                height: "100%",
-                playerVars: {
-                  // https://developers.google.com/youtube/player_parameters
-                  autoplay: 1,
-                  enablejsapi: 1,
-                  modestbranding: 1,
-                //   rel: 0,
-                //   showinfo: 0,
-                //   playlist: [],
-                },
-              }
+    }
+
+    componentDidMount(props) {
+        const {location: {pathname}} = this.props
+        const pathArray = pathname.split('/')
+        const videoId = "kNCD16Z8Ges" // pathArray[pathArray.length-1]
+        
+        try {
+            console.log(highlightApi.getHighlights(videoId))
+            const highlights = highlightApi.getHighlights(videoId)
+            this.setState({
+                highlights, videoId
+            })
+        }
+        catch ( e ) {
+
+        }
+        finally {
+            this.setState({
+                loading: false
+            })
         }
     }
 
@@ -40,12 +65,13 @@ export default class extends React.Component {
     }
 
     render () {
-        const { youtubeVideoId, highlights, youtubeOpts } = this.state;
+        const { videoId, highlights, youtubeOpts, loading } = this.state;
         return <HomePresenter highlights={highlights}
-                            youtubeVideoId={youtubeVideoId}
+                            videoId={videoId}
                             youtubeReady={this.youtubeReady.bind(this)}
                             youtubeSeekTo={this.youtubeSeekTo.bind(this)}
                             youtubeOpts={youtubeOpts}
+                            loading={loading}
         />
     }
 }
