@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a61bc76c86e048d262c2276341d079eb",
+    "revision": "1c27b0dd946cce5fd5802c0f0d5e9254",
     "url": "/poty-web/index.html"
   },
   {
-    "revision": "74ac47947aa5591b6e62",
+    "revision": "dac1173435c14c01b56c",
     "url": "/poty-web/static/css/2.89f067aa.chunk.css"
   },
   {
-    "revision": "f7c077f45c190a66e79e",
+    "revision": "daef758c738ebe1e99f6",
     "url": "/poty-web/static/css/main.6135df4c.chunk.css"
   },
   {
-    "revision": "74ac47947aa5591b6e62",
-    "url": "/poty-web/static/js/2.54a62f1d.chunk.js"
+    "revision": "dac1173435c14c01b56c",
+    "url": "/poty-web/static/js/2.c0d61a60.chunk.js"
   },
   {
     "revision": "5c613c7669dcbf9b7ec38a684e605a06",
-    "url": "/poty-web/static/js/2.54a62f1d.chunk.js.LICENSE.txt"
+    "url": "/poty-web/static/js/2.c0d61a60.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f7c077f45c190a66e79e",
-    "url": "/poty-web/static/js/main.4df221cd.chunk.js"
+    "revision": "daef758c738ebe1e99f6",
+    "url": "/poty-web/static/js/main.7ca53088.chunk.js"
   },
   {
     "revision": "2014ab9a26d1fb033c30",
