@@ -8,10 +8,12 @@ const videoAxios = axios.create({
 });
 
 export const videoApi = {
-    getVideos: () => videoAxios.get("videos", {
+    getVideos: ({maxResults, regionCode}) => videoAxios.get("videos", {
         params: {
             part: "id,snippet",
             chart: "mostPopular",
+            maxResults,
+            regionCode
         }
     }),
 }

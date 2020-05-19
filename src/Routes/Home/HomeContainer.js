@@ -1,5 +1,5 @@
 import React from 'react'
-import { videoApi } from '../../api'
+import { videoApi } from 'api'
 import HomePresenter from './HomePresenter'
 
 export default class extends React.Component {
@@ -13,7 +13,9 @@ export default class extends React.Component {
 
     async componentDidMount() {
         try{
-            const {data: {items: videos}} = await videoApi.getVideos()
+            const {data: {items: videos}} = await videoApi.getVideos({
+                maxResults: 24,
+            })
             console.log( videos )
             this.setState({videos})
         }
