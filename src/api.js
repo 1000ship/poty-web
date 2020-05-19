@@ -1,15 +1,19 @@
 import axios from 'axios'
 
 const videoAxios = axios.create({
-    baseURL: "https://www.googleapis.com/youtube/v3/videos",
+    baseURL: "https://www.googleapis.com/youtube/v3/",
     params: {
         key: process.env.YOUTUBE_VIDEO_KEY,
-        language: "en-US",
     },
 });
 
 export const videoApi = {
-    getVideos: axios.get()part=id,snippet&chart=mostPopular
+    getVideos: () => videoAxios.get("videos", {
+        params: {
+            part: "id,snippet",
+            chart: "mostPopular",
+        }
+    }),
 }
 
 export const highlightApi = {
