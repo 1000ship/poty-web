@@ -5,7 +5,7 @@ import YouTube from 'react-youtube';
 import Highlight from './Highlight'
 
 
-const HomePresenter = ( { videoId, highlights, youtubeSeekTo, youtubeReady, youtubeOpts, loading } ) => (
+const TheaterPresenter = ( { videoId, highlights, youtubeSeekTo, youtubeReady, youtubeOpts, loading } ) => (
     <Container className="pt-2">
         <Row>
             <Col xs="12" md="8" lg="9" className="embed-responsive embed-responsive-16by9">
@@ -38,4 +38,4 @@ const HomePresenter = ( { videoId, highlights, youtubeSeekTo, youtubeReady, yout
     </Container>
 )
 
-export default HomePresenter;
+export default TheaterPresenter;

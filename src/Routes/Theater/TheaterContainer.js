@@ -1,5 +1,5 @@
 import React from 'react'
-import HomePresenter from './HomePresenter'
+import TheaterPresenter from './TheaterPresenter'
 import {highlightApi} from 'api'
 
 export default class extends React.Component {
@@ -66,7 +66,7 @@ export default class extends React.Component {
 
     render () {
         const { videoId, highlights, youtubeOpts, loading } = this.state;
-        return <HomePresenter highlights={highlights}
+        return <TheaterPresenter highlights={highlights}
                             videoId={videoId}
                             youtubeReady={this.youtubeReady.bind(this)}
                             youtubeSeekTo={this.youtubeSeekTo.bind(this)}

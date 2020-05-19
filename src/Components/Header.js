@@ -16,7 +16,9 @@ const Header = props => {
     <HeaderContainer>
         <Container>
             <Row>
-                <Col>POTY</Col>
+                <Col>
+                    <Link to="/">POTY</Link>
+                </Col>
             </Row>
         </Container>
     </HeaderContainer>
