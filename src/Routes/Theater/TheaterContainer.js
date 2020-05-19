@@ -31,7 +31,7 @@ export default class extends React.Component {
     componentDidMount(props) {
         const {location: {pathname}} = this.props
         const pathArray = pathname.split('/')
-        const videoId = "kNCD16Z8Ges" // pathArray[pathArray.length-1]
+        const videoId = pathArray[pathArray.length-1]
         
         try {
             console.log(highlightApi.getHighlights(videoId))
