@@ -28,20 +28,19 @@ export default class extends React.Component {
         super(props)
     }
 
-    componentDidMount(props) {
+    async componentDidMount(props) {
         const {location: {pathname}} = this.props
         const pathArray = pathname.split('/')
         const videoId = pathArray[pathArray.length-1]
         
         try {
-            console.log(highlightApi.getHighlights(videoId))
-            const {lastUpdate, highlights} = highlightApi.getHighlights(videoId)
+            const {data:{lastUpdate, highlights}} = await highlightApi.getHighlights(videoId)
             this.setState({
                 highlights, lastUpdate, videoId
             })
         }
         catch ( e ) {
-
+            console.log( "error in theater container js" );
         }
         finally {
             this.setState({

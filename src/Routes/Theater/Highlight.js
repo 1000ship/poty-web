@@ -55,6 +55,10 @@ const Comments = styled.div`
     margin-top: 10px;
 `
 
+const Rank = styled.span`
+    margin-right: 5px;
+`
+
 class Highlight extends React.Component {
     constructor( props )
     {
@@ -91,8 +95,8 @@ class Highlight extends React.Component {
             <Container>
                 <Row>
                     <Col>
-                        1위
-                        <TimestampButton href="#" onClick={(e)=>youtubeSeekTo(this.timestampToSecond(timestamp), true)}>
+                        <Rank>{rank}위</Rank>
+                        <TimestampButton href="javascript:void(0);" onClick={(e)=>youtubeSeekTo(this.timestampToSecond(timestamp), true)}>
                             <Timestamp>
                                 {timestamp}
                             </Timestamp>
