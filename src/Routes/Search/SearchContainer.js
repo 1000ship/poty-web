@@ -5,37 +5,50 @@ import SearchPresenter from './SearchPresenter'
 export default class extends React.Component {
     constructor(props) {
         super(props)
-        const {match:{params:{query}}} = props;
         this.state = {
             videos: [],
-            query,
+            query: "",
             loading: true,
         }
     }
 
-    async componentDidMount() {
+    async loadData() {
+        const {match:{params:{query}}} = this.props
         try{
-            const {query} = this.state
+            this.setState({
+                loading: true
+            })
             const {data: {items: videos}} = await videoApi.searchVideos({
-                maxResults: 24,
+                maxResults: 12,
                 q: query,
             })
-            console.log( videos )
             this.setState({videos})
         }
         catch {
-
+            console.log( "error in searchcontainer js")
         }
         finally {
             this.setState({
-                loading: false
+                loading: false,
+                query
             })
         }
     }
 
+    async componentDidMount() {
+        await this.loadData()
+    }
+
+    async componentDidUpdate(prevProps) {
+        if(prevProps.match.params.query !== this.props.match.params.query){
+            await this.loadData()
+        }
+    }     
+
     render() {
-        const {videos, loading} = this.state
+        const {query, videos, loading} = this.state
         return <SearchPresenter 
+                    query={query}
                     videos={videos}
                     loading={loading}/>
     }

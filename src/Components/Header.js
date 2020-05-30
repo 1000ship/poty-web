@@ -58,7 +58,7 @@ const Header = props => {
         <Container>
             <Row>
                 <Col xs="auto">
-                    <Title to="/">POTY</Title>
+                    <Title to="/" onClick={()=>setSearchTerm("")}>POTY</Title>
                 </Col>
                 <Col>
                     <InputGroup>

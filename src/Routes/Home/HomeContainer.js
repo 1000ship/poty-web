@@ -14,12 +14,12 @@ export default class extends React.Component {
     async componentDidMount() {
         try{
             const {data: {items: videos}} = await videoApi.getVideos({
-                maxResults: 24,
+                maxResults: 12,
             })
             this.setState({videos})
         }
         catch {
-
+            console.log("error in home conatainer js")
         }
         finally {
             this.setState({

@@ -30,6 +30,7 @@ export default class extends React.Component {
     }
 
     onScrollEvent(e) {
+
         if( !this.state ) return;
         if( this.state.floatingVideo == false || window.scrollY > 0 )   
             this.setState({floatingVideo: true})
