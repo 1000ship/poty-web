@@ -7,7 +7,8 @@ export default class extends React.Component {
         super(props)
         this.state = {
             videos: [],
-            loading: true
+            loading: true,
+            error: null
         }
     }
 
@@ -18,8 +19,10 @@ export default class extends React.Component {
             })
             this.setState({videos})
         }
-        catch {
-            console.log("error in home conatainer js")
+        catch(error) {
+            this.setState({
+                error
+            })
         }
         finally {
             this.setState({
@@ -29,9 +32,10 @@ export default class extends React.Component {
     }
 
     render() {
-        const {videos, loading} = this.state
+        const {videos, loading, error} = this.state
         return <HomePresenter 
                     videos={videos}
-                    loading={loading}/>
+                    loading={loading}
+                    error={error}/>
     }
 }

@@ -4,10 +4,12 @@ import styled from "styled-components";
 import YouTube from 'react-youtube';
 import Highlight from './Highlight'
 import {HeaderSpacer} from 'GlobalStyles'
+import Error from 'Components/Error';
 
-const TheaterPresenter = ( { floatingVideo, videoId, highlights, youtubeSeekTo, youtubeReady, youtubeOpts, loading } ) => (
+const TheaterPresenter = ( {videoId, highlights, youtubeSeekTo, youtubeReady, youtubeOpts, loading, error } ) => (
     <Container className="pt-2">
         <HeaderSpacer/>
+        { error && <Error error={error}/> }
         <Row>
             <Col xs="12" lg="8" xl="9">
                 <div className="embed-responsive embed-responsive-16by9">

@@ -9,6 +9,7 @@ export default class extends React.Component {
             videos: [],
             query: "",
             loading: true,
+            error: null,
         }
     }
 
@@ -16,7 +17,8 @@ export default class extends React.Component {
         const {match:{params:{query}}} = this.props
         try{
             this.setState({
-                loading: true
+                loading: true,
+                error: null
             })
             const {data: {items: videos}} = await videoApi.searchVideos({
                 maxResults: 12,
@@ -24,8 +26,8 @@ export default class extends React.Component {
             })
             this.setState({videos})
         }
-        catch {
-            console.log( "error in searchcontainer js")
+        catch(error) {
+            this.setState({error})
         }
         finally {
             this.setState({
@@ -46,10 +48,11 @@ export default class extends React.Component {
     }     
 
     render() {
-        const {query, videos, loading} = this.state
+        const {query, videos, loading, error} = this.state
         return <SearchPresenter 
                     query={query}
                     videos={videos}
-                    loading={loading}/>
+                    loading={loading}
+                    error={error}/>
     }
 }

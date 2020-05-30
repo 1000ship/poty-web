@@ -5,7 +5,6 @@ import {highlightApi} from 'api'
 export default class extends React.Component {
 
     state = {
-        floatingVideo: false,
         videoId: "",
         highlights: [],
         youtubePlayer: null,
@@ -23,19 +22,11 @@ export default class extends React.Component {
             },
         },
         loading: true,
+        error: null
     }
 
     constructor ( props ) {
         super(props)
-    }
-
-    onScrollEvent(e) {
-
-        if( !this.state ) return;
-        if( this.state.floatingVideo == false || window.scrollY > 0 )   
-            this.setState({floatingVideo: true})
-        else if( this.state.floatingVideo || window.scrollY == 0 )
-            this.setState({floatingVideo: false})
     }
 
     async componentDidMount(props) {
@@ -48,10 +39,9 @@ export default class extends React.Component {
             this.setState({
                 highlights, lastUpdate, videoId
             })
-            window.addEventListener("scroll", this.onScrollEvent.bind(this));
         }
-        catch ( e ) {
-            console.log("error in theater container js");
+        catch(error) {
+            this.setState({error})
         }
         finally {
             this.setState({
@@ -75,15 +65,15 @@ export default class extends React.Component {
     }
 
     render () {
-        const { floatingVideo, videoId, highlights, youtubeOpts, loading } = this.state;
+        const { videoId, highlights, youtubeOpts, loading, error } = this.state;
         return <TheaterPresenter 
-                            floatingVideo={floatingVideo}
                             videoId={videoId}
                             highlights={highlights}
                             youtubeReady={this.youtubeReady.bind(this)}
                             youtubeSeekTo={this.youtubeSeekTo.bind(this)}
                             youtubeOpts={youtubeOpts}
                             loading={loading}
+                            error={error}
         />
     }
 }
