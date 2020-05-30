@@ -25,6 +25,7 @@ export const videoApi = {
     searchVideos: ({q, maxResults, pageToken, regionCode}) => videoAxios.get("search", {
         params: {
             part: "id,snippet",
+            type: "video",
             q, maxResults, pageToken, regionCode
         }
     })

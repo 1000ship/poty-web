@@ -13,10 +13,10 @@ const HomePresenter = ({videos, loading}) => loading ? (<h1>Loading</h1>) : (
         <HeaderSpacer></HeaderSpacer>
         <VideosContainer>
         {videos && videos.length > 0 && videos.map( (video, i) => {
-                const {id, snippet:{thumbnails, title, channelId, channelTitle}} = video
+                const {id:{videoId}, snippet:{thumbnails, title, channelId, channelTitle}} = video
                 return <Col xs="6" md="4" lg="3" key={i}>
                     <VideoThumbnail
-                        id={id}
+                        id={videoId}
                         thumbnailSrc={thumbnails.medium.url}
                         title={title}
                         channelId={channelId}

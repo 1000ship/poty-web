@@ -1,5 +1,5 @@
-import React from 'react'
-import { withRouter, Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { withRouter, Link, useHistory } from 'react-router-dom';
 import { Container, Row, Col, Input, Button, InputGroup, InputGroupAddon } from 'reactstrap'
 import styled from "styled-components";
 
@@ -36,16 +36,23 @@ const SearchInput = styled(Input)`
     }
 `
 
-const typeInSearch = (e) => {
-    console.log(e.target.value);
-}
-
-const searchTo = (e) => {
-    console.log(123);
-}
-
 const Header = props => {
+    const [searchTerm, setSearchTerm] = useState("")
     const { location : { pathname } } = props
+    const history = useHistory();
+
+    const updateTerm = (e) => {
+        setSearchTerm(e.target.value);
+    }
+    const searchTo = () => {
+        history.push(`/search/${encodeURI(searchTerm)}`)
+    }
+    const searchByEnter = (e) => {
+        const ENTER_KEY_CODE = 13
+        if( e.keyCode === ENTER_KEY_CODE )
+            searchTo();
+    }
+
     return (
     <HeaderContainer>
         <Container>
@@ -55,7 +62,7 @@ const Header = props => {
                 </Col>
                 <Col>
                     <InputGroup>
-                        <SearchInput onChange={typeInSearch} color="secondary"/>
+                        <SearchInput value={searchTerm} onKeyDown={searchByEnter} onChange={updateTerm} color="secondary"/>
                         <InputGroupAddon addonType="append">
                             <Button onClick={searchTo} outline color="secondary">검색</Button>
                         </InputGroupAddon>
