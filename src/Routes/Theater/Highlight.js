@@ -97,7 +97,6 @@ class Highlight extends React.Component {
 
     render () {
         const { videoId, lastUpdate, rank, totalLikeCount, totalReplyComment, timestamp, comments, youtubeSeekTo } = this.state
-        console.log( comments )
         return (
             <Container>
                 <Row>
@@ -116,8 +115,9 @@ class Highlight extends React.Component {
                 <Row>
                     <Col>
                         <Comments>
-                            {comments.map( comment => 
+                            {comments.map( (comment,i) => 
                                 <Comment
+                                    key={i}
                                     userId={comment.userId}
                                     likeCount={comment.likeCount}
                                     commentText = {comment.commentText}

@@ -16,7 +16,6 @@ export default class extends React.Component {
             const {data: {items: videos}} = await videoApi.getVideos({
                 maxResults: 24,
             })
-            console.log( videos )
             this.setState({videos})
         }
         catch {

@@ -5,7 +5,7 @@ import YouTube from 'react-youtube';
 import Highlight from './Highlight'
 import {HeaderSpacer} from 'GlobalStyles'
 
-const TheaterPresenter = ( { videoId, highlights, youtubeSeekTo, youtubeReady, youtubeOpts, loading } ) => (
+const TheaterPresenter = ( { floatingVideo, videoId, highlights, youtubeSeekTo, youtubeReady, youtubeOpts, loading } ) => (
     <Container className="pt-2">
         <HeaderSpacer/>
         <Row>
@@ -18,8 +18,9 @@ const TheaterPresenter = ( { videoId, highlights, youtubeSeekTo, youtubeReady, y
             </Col>
             <Col xd="12" lg="4" xl="3">
                 { highlights && 
-                    highlights.map( highlight =>
+                    highlights.map( (highlight,i) =>
                         <Highlight 
+                            key={i}
                             videoId={highlight.videoId}
                             lastUpdate={highlight.lastUpdate}
                             rank={highlight.rank}

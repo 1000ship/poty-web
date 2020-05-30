@@ -23,7 +23,8 @@
       ], 
       "rank": 1, 
       "timestamp": "5:10", 
-      "totalLikeCount": 868
+      "totalLikeCount": 868, 
+      "totalReplyComment": 15
     }, 
     {
       "comments": [
@@ -36,7 +37,8 @@
       ], 
       "rank": 2, 
       "timestamp": "5:07", 
-      "totalLikeCount": 544
+      "totalLikeCount": 544, 
+      "totalReplyComment": 16
     }, 
     {
       "comments": [
@@ -49,7 +51,8 @@
       ], 
       "rank": 3, 
       "timestamp": "4:33", 
-      "totalLikeCount": 361
+      "totalLikeCount": 361, 
+      "totalReplyComment": 12
     }, 
     {
       "comments": [
@@ -68,7 +71,8 @@
       ], 
       "rank": 4, 
       "timestamp": "4:57", 
-      "totalLikeCount": 187
+      "totalLikeCount": 187, 
+      "totalReplyComment": 6
     }, 
     {
       "comments": [
@@ -81,9 +85,10 @@
       ], 
       "rank": 5, 
       "timestamp": "4:59", 
-      "totalLikeCount": 112
+      "totalLikeCount": 112, 
+      "totalReplyComment": 2
     }
   ], 
   "lastUpdate": "", 
-  "video_id": "YrwXyOeT0Hg"
+  "videoId": "YrwXyOeT0Hg"
 }
