@@ -16,9 +16,9 @@ export default class extends React.Component {
                 autoplay: 1,
                 enablejsapi: 1,
                 modestbranding: 1,
-            //   rel: 0,
-            //   showinfo: 0,
-            //   playlist: [],
+                // rel: 0,
+                // showinfo: 0,
+                // playlist: [],
             },
         },
         loading: true,
@@ -40,7 +40,7 @@ export default class extends React.Component {
             })
         }
         catch ( e ) {
-            console.log( "error in theater container js" );
+            console.log("error in theater container js");
         }
         finally {
             this.setState({

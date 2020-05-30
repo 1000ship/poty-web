@@ -6,17 +6,22 @@ const CommentContainer = styled.div`
     margin-bottom: 10px;
 `
 
-const CommentUserId = styled.div`
-    font-weight: 500;
-    font-size: 18px;
+const CommentUserId = styled.span`
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.1;
+    margin-right: 5px;
 `
 
-const CommentText = styled.div`
+const CommentText = styled.span`
+    font-size: 13px;
 `
 
 const CommentLikeCount = styled.div`
     font-weight: 500;
-    color: #666;
+    font-size: 12px;
+    color: #888;
+    margin-left: 5px;
 `
 
 const Comment = ({userId, likeCount, commentText}) => {
@@ -47,7 +52,7 @@ const Timestamp = styled.span`
 
 const LikeDisplay = styled.span`
     font-weight: 500;
-    color: #666;
+    color: #888;
 `
 
 const Comments = styled.div`
@@ -57,6 +62,8 @@ const Comments = styled.div`
 
 const Rank = styled.span`
     margin-right: 5px;
+    font-size: 18px;
+    font-weight: 600;
 `
 
 class Highlight extends React.Component {

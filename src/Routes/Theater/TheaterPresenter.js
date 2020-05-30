@@ -9,12 +9,14 @@ const TheaterPresenter = ( { videoId, highlights, youtubeSeekTo, youtubeReady, y
     <Container className="pt-2">
         <HeaderSpacer/>
         <Row>
-            <Col xs="12" md="8" lg="9" className="embed-responsive embed-responsive-16by9">
-                {loading ? <>Now Loading</> : (
-                    <YouTube videoId={videoId} opts={youtubeOpts} onReady={youtubeReady}/>
-                )}
+            <Col xs="12" lg="8" xl="9">
+                <div className="embed-responsive embed-responsive-16by9">
+                    {loading ? <>Now Loading</> : (
+                        <YouTube videoId={videoId} opts={youtubeOpts} onReady={youtubeReady}/>
+                    )}
+                </div>
             </Col>
-            <Col xd="12" md="4" lg="3">
+            <Col xd="12" lg="4" xl="3">
                 { highlights && 
                     highlights.map( highlight =>
                         <Highlight 
