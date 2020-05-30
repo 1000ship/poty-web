@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/poty-web/static/css/main.6135df4c.chunk.css",
-    "main.js": "/poty-web/static/js/main.7036acf9.chunk.js",
-    "main.js.map": "/poty-web/static/js/main.7036acf9.chunk.js.map",
+    "main.js": "/poty-web/static/js/main.2d3e2982.chunk.js",
+    "main.js.map": "/poty-web/static/js/main.2d3e2982.chunk.js.map",
     "runtime-main.js": "/poty-web/static/js/runtime-main.359bc62d.js",
     "runtime-main.js.map": "/poty-web/static/js/runtime-main.359bc62d.js.map",
     "static/css/2.89f067aa.chunk.css": "/poty-web/static/css/2.89f067aa.chunk.css",
-    "static/js/2.97ce71bf.chunk.js": "/poty-web/static/js/2.97ce71bf.chunk.js",
-    "static/js/2.97ce71bf.chunk.js.map": "/poty-web/static/js/2.97ce71bf.chunk.js.map",
+    "static/js/2.d7f6a4eb.chunk.js": "/poty-web/static/js/2.d7f6a4eb.chunk.js",
+    "static/js/2.d7f6a4eb.chunk.js.map": "/poty-web/static/js/2.d7f6a4eb.chunk.js.map",
     "index.html": "/poty-web/index.html",
-    "precache-manifest.b50a00c4d4ddc5898110c856f2b173ad.js": "/poty-web/precache-manifest.b50a00c4d4ddc5898110c856f2b173ad.js",
+    "precache-manifest.b84c1eaa240022fb9cb990c607cb6eda.js": "/poty-web/precache-manifest.b84c1eaa240022fb9cb990c607cb6eda.js",
     "service-worker.js": "/poty-web/service-worker.js",
     "static/css/2.89f067aa.chunk.css.map": "/poty-web/static/css/2.89f067aa.chunk.css.map",
     "static/css/main.6135df4c.chunk.css.map": "/poty-web/static/css/main.6135df4c.chunk.css.map",
-    "static/js/2.97ce71bf.chunk.js.LICENSE.txt": "/poty-web/static/js/2.97ce71bf.chunk.js.LICENSE.txt"
+    "static/js/2.d7f6a4eb.chunk.js.LICENSE.txt": "/poty-web/static/js/2.d7f6a4eb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.359bc62d.js",
     "static/css/2.89f067aa.chunk.css",
-    "static/js/2.97ce71bf.chunk.js",
+    "static/js/2.d7f6a4eb.chunk.js",
     "static/css/main.6135df4c.chunk.css",
-    "static/js/main.7036acf9.chunk.js"
+    "static/js/main.2d3e2982.chunk.js"
   ]
 }

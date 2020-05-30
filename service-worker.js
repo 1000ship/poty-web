@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/poty-web/precache-manifest.b50a00c4d4ddc5898110c856f2b173ad.js"
+  "/poty-web/precache-manifest.b84c1eaa240022fb9cb990c607cb6eda.js"
 );
 
 self.addEventListener('message', (event) => {
