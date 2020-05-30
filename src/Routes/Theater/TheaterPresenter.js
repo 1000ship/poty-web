@@ -9,7 +9,7 @@ const TheaterPresenter = ( { videoId, highlights, youtubeSeekTo, youtubeReady, y
     <Container className="pt-2">
         <Row>
             <Col xs="12" md="8" lg="9" className="embed-responsive embed-responsive-16by9">
-                {loading ? <>asd</> : (
+                {loading ? <>Now Loading</> : (
                     <YouTube videoId={videoId} opts={youtubeOpts} onReady={youtubeReady}/>
                 )}
             </Col>

@@ -35,9 +35,9 @@ export default class extends React.Component {
         
         try {
             console.log(highlightApi.getHighlights(videoId))
-            const highlights = highlightApi.getHighlights(videoId)
+            const {lastUpdate, highlights} = highlightApi.getHighlights(videoId)
             this.setState({
-                highlights, videoId
+                highlights, lastUpdate, videoId
             })
         }
         catch ( e ) {
@@ -66,8 +66,9 @@ export default class extends React.Component {
 
     render () {
         const { videoId, highlights, youtubeOpts, loading } = this.state;
-        return <TheaterPresenter highlights={highlights}
+        return <TheaterPresenter 
                             videoId={videoId}
+                            highlights={highlights}
                             youtubeReady={this.youtubeReady.bind(this)}
                             youtubeSeekTo={this.youtubeSeekTo.bind(this)}
                             youtubeOpts={youtubeOpts}
