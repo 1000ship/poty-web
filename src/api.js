@@ -21,6 +21,13 @@ export const videoApi = {
             regionCode
         }
     }),
+    //https://www.googleapis.com/youtube/v3/search?key=AIzaSyCW_MCH2iNnoVle1hfDrOe_iA2jk-7m_qM&part=id,snippet&q=미역국
+    searchVideos: ({q, maxResults, pageToken, regionCode}) => videoAxios.get("search", {
+        params: {
+            part: "id,snippet",
+            q, maxResults, pageToken, regionCode
+        }
+    })
 }
 
 export const highlightApi = {
