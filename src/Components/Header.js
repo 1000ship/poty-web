@@ -4,10 +4,25 @@ import { Container, Row, Col } from 'reactstrap'
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
-color: white;
-background-color: black;
-padding: 10px;
-font-size: 40px;
+    color: white;
+    background-color: #161616;
+    padding: 10px;
+    font-size: 30px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+`
+
+const Title = styled(Link)`
+    color: white;
+    transition: 0.3s;
+    font-weight: 500;
+    &:hover {
+        color: #ADADAD;
+        text-decoration: none;
+    }
 `
 
 const Header = props => {
@@ -17,7 +32,7 @@ const Header = props => {
         <Container>
             <Row>
                 <Col>
-                    <Link to="/">POTY</Link>
+                    <Title to="/">POTY</Title>
                 </Col>
             </Row>
         </Container>

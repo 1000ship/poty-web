@@ -3,10 +3,11 @@ import {Container, Row, Col} from 'reactstrap'
 import styled from "styled-components";
 import YouTube from 'react-youtube';
 import Highlight from './Highlight'
-
+import {HeaderSpacer} from 'GlobalStyles'
 
 const TheaterPresenter = ( { videoId, highlights, youtubeSeekTo, youtubeReady, youtubeOpts, loading } ) => (
     <Container className="pt-2">
+        <HeaderSpacer/>
         <Row>
             <Col xs="12" md="8" lg="9" className="embed-responsive embed-responsive-16by9">
                 {loading ? <>Now Loading</> : (
