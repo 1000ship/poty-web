@@ -38,7 +38,7 @@ const TheaterPresenter = ( {videoId, highlights, youtubeSeekTo, youtubeReady, yo
         </Row>
         <Row>
             <Col xs="12">
-                Comments List
+                {/* Comments List */}
             </Col>
         </Row>
     </Container>

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import VideoThumbnail from 'Components/VideoThumbnail'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, Button } from 'reactstrap'
 import { HeaderSpacer } from 'GlobalStyles'
 import Loading from 'Components/Loading'
 import Error from 'Components/Error'
@@ -10,7 +10,7 @@ const SearchTermDisplay = styled.div`
     padding-top: 20px;
 `
 
-const HomePresenter = ({query, videos, loading, error}) => loading ? (<Loading/>) : (
+const HomePresenter = ({query, videos, loading, error, loadVideo}) => (
     <Container>
         <Row>
             <HeaderSpacer></HeaderSpacer>
@@ -37,6 +37,13 @@ const HomePresenter = ({query, videos, loading, error}) => loading ? (<Loading/>
             )
         }
         </Row>
+        {loading ? (
+            <Loading />
+        ) : (
+            <Row>
+                <Button color="secondary" size="lg" block className="m-3" onClick={e => loadVideo(true)}>Load more videos</Button>
+            </Row>
+        )}
     </Container>
 )
 

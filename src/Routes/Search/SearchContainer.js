@@ -13,18 +13,22 @@ export default class extends React.Component {
         }
     }
 
-    async loadData() {
+    async loadData(isNextPage) {
         const {match:{params:{query}}} = this.props
         try{
             this.setState({
                 loading: true,
                 error: null
             })
-            const {data: {items: videos}} = await videoApi.searchVideos({
+            const {data: {nextPageToken, items: loadedVideos}} = await videoApi.searchVideos({
                 maxResults: 12,
                 q: query,
+                pageToken: (isNextPage ? this.state.nextPageToken : null)
             })
-            this.setState({videos})
+            if(isNextPage && this.state.videos)
+                this.setState({videos: [...this.state.videos, ...loadedVideos], nextPageToken })
+            else
+                this.setState({videos: loadedVideos, nextPageToken})
         }
         catch(error) {
             this.setState({error})
@@ -53,6 +57,7 @@ export default class extends React.Component {
                     query={query}
                     videos={videos}
                     loading={loading}
-                    error={error}/>
+                    error={error}
+                    loadVideo={this.loadData.bind(this)}/>
     }
 }
