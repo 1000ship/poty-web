@@ -1,5 +1,5 @@
 import React from 'react'
-import { videoApi } from 'api'
+import { youtubeApi } from 'api'
 import SearchPresenter from './SearchPresenter'
 
 export default class extends React.Component {
@@ -20,12 +20,13 @@ export default class extends React.Component {
                 loading: true,
                 error: null
             })
-            const {data: {nextPageToken, items: loadedVideos}} = await videoApi.searchVideos({
+            const {data, data: {nextPageToken, items: loadedVideos}} = await youtubeApi.searchVideos({
                 maxResults: 12,
                 q: query,
                 pageToken: (isNextPage ? this.state.nextPageToken : null)
             })
-            if(isNextPage && this.state.videos)
+            console.log( data )
+            if(isNextPage && this.state.videos && nextPageToken)
                 this.setState({videos: [...this.state.videos, ...loadedVideos], nextPageToken })
             else
                 this.setState({videos: loadedVideos, nextPageToken})

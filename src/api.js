@@ -1,19 +1,20 @@
 import axios from 'axios'
 import testCase from 'testCase.json'
 
-const videoAxios = axios.create({
+const youtubeAxios = axios.create({
     baseURL: "https://www.googleapis.com/youtube/v3/",
     params: {
-        key: process.env.REACT_APP_YOUTUBE_API_KEY,
+        key: process.env.REACT_APP_YOUTUBE_API_KEY //(Math.random() > 0.5 ? process.env.REACT_APP_YOUTUBE_API_KEY : process.env.REACT_APP_YOUTUBE_API_KEY2),
     },
 });
 
-const highlightAxios = axios.create({
-    baseURL: "http://192.168.150.19:3000/"
+console.log( process.env.REACT_POTY_API_URL , "url" )
+const potyAxios = axios.create({
+    baseURL: `${process.env.REACT_APP_POTY_API_URL}`
 })
 
-export const videoApi = {
-    getVideos: ({maxResults, regionCode}) => videoAxios.get("videos", {
+export const youtubeApi = {
+    getVideos: ({maxResults, regionCode}) => youtubeAxios.get("videos", {
         params: {
             part: "id,snippet",
             chart: "mostPopular",
@@ -21,17 +22,22 @@ export const videoApi = {
             regionCode
         }
     }),
-    //https://www.googleapis.com/youtube/v3/search?key=AIzaSyCW_MCH2iNnoVle1hfDrOe_iA2jk-7m_qM&part=id,snippet&q=미역국
-    searchVideos: ({q, maxResults, pageToken, regionCode}) => videoAxios.get("search", {
+    searchVideos: ({q, maxResults, pageToken, regionCode}) => youtubeAxios.get("search", {
         params: {
             part: "id,snippet",
             type: "video",
             q, maxResults, pageToken, regionCode
         }
+    }),
+    getChannels: ({id, maxResults, pageToken}) => youtubeAxios.get("channels", {
+        params: {
+            part: "id,snippet",
+            id, maxResults, pageToken
+        }
     })
 }
 
 export const highlightApi = {
-    getHighlights_Test: (videoId) => highlightAxios.get(),
-    getHighlights: ( videoId ) => {return {data:testCase}},
+    getHighlights: (videoId) => potyAxios.get(`/highlight/${videoId}`),
+    getHighlights_Test: ( videoId ) => {return {data:testCase}},
 }

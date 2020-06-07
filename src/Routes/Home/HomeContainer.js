@@ -1,5 +1,5 @@
 import React from 'react'
-import { videoApi } from 'api'
+import { youtubeApi } from 'api'
 import HomePresenter from './HomePresenter'
 
 export default class extends React.Component {
@@ -14,7 +14,7 @@ export default class extends React.Component {
 
     async componentDidMount() {
         try{
-            const {data: {items: videos}} = await videoApi.getVideos({
+            const {data: {items: videos}} = await youtubeApi.getVideos({
                 maxResults: 12,
             })
             this.setState({videos})
