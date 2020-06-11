@@ -38,10 +38,10 @@ export default ( {id, thumbnailSrc, title, channelId, channelTitle} ) => (
     <ThumbnailLink to={`/video/${id}`}>
         <ThumbnailImage src={thumbnailSrc}/>
         <Row>
-            <Col xs="auto" className="mr-0 pr-0">
+            {/* <Col xs="auto" className="mr-0 pr-0">
                 <ChannelImage src="https://yt3.ggpht.com/a/AATXAJxyDrbpIma8RD3qXIIwy8QYtSBpH-vFFfjZ5g=s88-c-k-c0xffffffff-no-rj-mo"/>
-            </Col>
-            <Col className="ml-0 pl-0">
+            </Col> */}
+            <Col>{/*} className="ml-0 pl-0">*/}
                 <TitleText>{title}</TitleText>
                 <ChannelText>{channelTitle}</ChannelText>
             </Col>
