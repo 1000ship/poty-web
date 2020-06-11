@@ -26,7 +26,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://1000ship.github.io/poty-web",
+  "homepage": "https://1000ship.github.io/",
   "eslintConfig": {
     "extends": "react-app"
   },

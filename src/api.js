@@ -4,7 +4,7 @@ import testCase from 'testCase.json'
 const youtubeAxios = axios.create({
     baseURL: "https://www.googleapis.com/youtube/v3/",
     params: {
-        key: process.env.REACT_APP_YOUTUBE_API_KEY //(Math.random() > 0.5 ? process.env.REACT_APP_YOUTUBE_API_KEY : process.env.REACT_APP_YOUTUBE_API_KEY2),
+        key: (Math.random() > 0.5 ? process.env.REACT_APP_YOUTUBE_API_KEY : process.env.REACT_APP_YOUTUBE_API_KEY_KH),
     },
 });
 
@@ -26,6 +26,8 @@ export const youtubeApi = {
         params: {
             part: "id,snippet",
             type: "video",
+            videoEmbeddable: "true",
+            videoSyndicated: "true",
             q, maxResults, pageToken, regionCode
         }
     }),
