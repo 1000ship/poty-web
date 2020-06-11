@@ -1,10 +1,16 @@
 import axios from 'axios'
 import testCase from 'testCase.json'
 
+const getRandomKey = () => (Math.random() < 0.333 ?
+                                (Math.random() < 0.5 ?
+                                    process.env.REACT_APP_YOUTUBE_API_KEY :
+                                    process.env.REACT_APP_YOUTUBE_API_KEY_HW ) :
+                                process.env.REACT_APP_YOUTUBE_API_KEY_KH)
+
 const youtubeAxios = axios.create({
     baseURL: "https://www.googleapis.com/youtube/v3/",
     params: {
-        key: (Math.random() < 0.333 ? (Math.random() < 0.5 ? process.env.REACT_APP_YOUTUBE_API_KEY : process.env.REACT_APP_YOUTUBE_API_KEY_HW ) : process.env.REACT_APP_YOUTUBE_API_KEY_KH),
+        key: getRandomKey(),
     },
 });
 
@@ -19,7 +25,8 @@ export const youtubeApi = {
             part: "id,snippet",
             chart: "mostPopular",
             maxResults,
-            regionCode
+            regionCode,
+            key: getRandomKey()
         }
     }),
     searchVideos: ({q, maxResults, pageToken, regionCode}) => youtubeAxios.get("search", {
@@ -28,13 +35,15 @@ export const youtubeApi = {
             type: "video",
             videoEmbeddable: "true",
             videoSyndicated: "true",
-            q, maxResults, pageToken, regionCode
+            q, maxResults, pageToken, regionCode,
+            key: getRandomKey()
         }
     }),
     getChannels: ({id, maxResults, pageToken}) => youtubeAxios.get("channels", {
         params: {
             part: "id,snippet",
-            id, maxResults, pageToken
+            id, maxResults, pageToken,
+            key: getRandomKey()
         }
     })
 }
