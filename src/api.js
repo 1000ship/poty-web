@@ -4,7 +4,7 @@ import testCase from 'testCase.json'
 const youtubeAxios = axios.create({
     baseURL: "https://www.googleapis.com/youtube/v3/",
     params: {
-        key: (Math.random() > 0.5 ? process.env.REACT_APP_YOUTUBE_API_KEY : process.env.REACT_APP_YOUTUBE_API_KEY_KH),
+        key: (Math.random() < 0.333 ? (Math.random() < 0.5 ? process.env.REACT_APP_YOUTUBE_API_KEY : process.env.REACT_APP_YOUTUBE_API_KEY_HW ) : process.env.REACT_APP_YOUTUBE_API_KEY_KH),
     },
 });
 
