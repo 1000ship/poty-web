@@ -2,7 +2,7 @@
 
 ## Play of the Youtube
 - Poty permits you can preview highlight from long-playtime's youtube video
-- Try this in here, https://1000ship.github.io/poty-web
+- Try this in here, http://poty.1000ship.me/
 
 ## Screenshots
 ### Mobile Web
