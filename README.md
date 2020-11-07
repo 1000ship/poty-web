@@ -7,9 +7,7 @@
 ## Screenshots
 ### Mobile Web
 
-<img src="_readme/mobile1.png" alt="home" style="zoom:25%;" />
-
-<img src="_readme/mobile2.png" alt="home" style="zoom:25%;" />
+<img src="_readme/mobile1.png" alt="home" width="250" /> <img src="_readme/mobile2.png" alt="theater" width="250" />
 
 ### PC Web
 
