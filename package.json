@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "axios": "0.21.1",
+    "axios": "^0.34.0",
     "bootstrap": "^4.4.1",
     "gh-pages": "^2.2.0",
     "react": "^16.13.1",
@@ -41,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "browserslist": "^4.28.7",
+    "svgo": "^2.8.4"
   }
 }
